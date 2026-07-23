@@ -1,0 +1,7 @@
+.kombai/
+__pycache__/
+.venv/
+tests/
+PROMPT.md
+dist/
+leanpass/__pycache__

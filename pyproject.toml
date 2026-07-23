@@ -1,0 +1,11 @@
+[project]
+name = "leanpass"
+version = "0.1.0"
+description = "A lightweight, transparent alternative to PyTorch/TensorFlow built on NumPy."
+authors = [{ name = "LeanPass" }]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["numpy"]
+
+[project.scripts]
+leanpass-demo = "demo:main"

@@ -1,17 +1,29 @@
-# leanpass
+# LeanPass
 
-A minimal, transparent NumPy-based autograd library for small models.
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![PyPI](https://img.shields.io/pypi/v/leanpass.svg)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Tests](https://img.shields.io/badge/tests-pytest-yellow)
+
+LeanPass is a lightweight, transparent NumPy-based autodiff library for small neural network experiments. It is designed to be easy to read, simple to inspect, and practical for learning how automatic differentiation works under the hood.
+
+## Why LeanPass?
+
+- Minimal dependency footprint: only NumPy
+- Clear, readable implementation instead of heavy abstraction
+- Core building blocks for tensors, layers, and optimizers
+- Useful for teaching, prototyping, and small-scale experimentation
 
 ## Features
 
-- `Tensor` with reverse-mode autodiff
-- Operators: `+`, `-`, `*`, `/`, `**`, `@`
-- Activations: `relu`, `sigmoid`, `softmax`
-- `Linear` and `MLP` modules
-- `SGD` and `Adam` optimizers
-- Graph visualization via `Tensor.visualize_dot()`
+- Tensor objects with reverse-mode autodiff
+- Core arithmetic and matrix operations
+- Activation functions such as ReLU, sigmoid, and softmax
+- Linear layers and multilayer perceptrons
+- SGD and Adam optimizers
+- A simple demo script that trains a toy model
 
-## Install
+## Installation
 
 ```bash
 pip install leanpass
@@ -20,19 +32,35 @@ pip install leanpass
 ## Quick start
 
 ```python
-from leanpass import Tensor, nn, optim
+from leanpass import Tensor, nn
 
 x = Tensor([[1.0, 2.0]], requires_grad=False)
 model = nn.MLP([2, 16, 3])
 logits = model(x)
+print(logits)
 ```
 
-## Run demo
+## Running the demo
 
 ```bash
 python demo.py
 ```
 
-## More information
+## Repository layout
 
-See `pyproject.toml` for package metadata and `demo.py` for a working example.
+- leanpass/ — the package source code
+- tests/ — regression and gradient-check tests
+- demo.py — a small end-to-end example
+- pyproject.toml — package metadata and build configuration
+
+## Development
+
+To run the test suite:
+
+```bash
+pytest
+```
+
+## License
+
+This project is intended for educational and experimental use.

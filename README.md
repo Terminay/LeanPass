@@ -61,6 +61,13 @@ To run the test suite:
 pytest
 ```
 
+## Community and contribution
+
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+- See [SECURITY.md](SECURITY.md) for the vulnerability disclosure process.
+- Bug reports and feature requests can be opened through the issue templates in [.github/ISSUE_TEMPLATE](.github/ISSUE_TEMPLATE).
+- Pull requests should follow the template in [.github/PULL_REQUEST_TEMPLATE/pull_request_template.md](.github/PULL_REQUEST_TEMPLATE/pull_request_template.md).
+
 ## License
 
-This project is intended for educational and experimental use.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

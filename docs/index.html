@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeanPass</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="LeanPass is a lightweight NumPy-based autodiff library for small neural network models.">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="index.html">LeanPass</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="../README.md">Docs</a>
+        <a href="../CONTRIBUTING.md">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>LeanPass</h1>
+      <p>A lightweight, transparent NumPy-based autodiff library for small neural network experiments.</p>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python 3.8+">
+        <img src="https://img.shields.io/pypi/v/leanpass.svg" alt="PyPI version">
+        <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
+        <img src="https://img.shields.io/badge/tests-pytest-yellow" alt="pytest">
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2>Why LeanPass?</h2>
+      <ul>
+        <li>Minimal dependency footprint: only NumPy</li>
+        <li>Readable, transparent implementation</li>
+        <li>Core autodiff and model-building primitives</li>
+        <li>Great for education, prototyping, and learning</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li>Tensor objects with reverse-mode autodiff</li>
+        <li>Arithmetic operators, matrix multiplication, and broadcasting</li>
+        <li>Activation functions: relu, sigmoid, softmax</li>
+        <li>Neural network layers: Linear and MLP</li>
+        <li>Optimizers: SGD and Adam</li>
+        <li>Simple demo script and test coverage</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Install</h2>
+      <pre><code>pip install leanpass</code></pre>
+    </section>
+
+    <section>
+      <h2>Quick start</h2>
+      <pre><code>from leanpass import Tensor, nn
+
+x = Tensor([[1.0, 2.0]], requires_grad=False)
+model = nn.MLP([2, 16, 3])
+logits = model(x)
+print(logits)
+</code></pre>
+    </section>
+
+    <section>
+      <h2>Run the demo</h2>
+      <pre><code>python demo.py</code></pre>
+    </section>
+
+    <section>
+      <h2>Repository layout</h2>
+      <ul>
+        <li><strong>leanpass/</strong> — package source code</li>
+        <li><strong>tests/</strong> — regression and gradient-check tests</li>
+        <li><strong>demo.py</strong> — end-to-end example</li>
+        <li><strong>pyproject.toml</strong> — package metadata</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contribution</h2>
+      <p>See the repository files for guidelines:</p>
+      <ul>
+        <li><a href="../CONTRIBUTING.md">CONTRIBUTING.md</a></li>
+        <li><a href="../SECURITY.md">SECURITY.md</a></li>
+        <li><a href="../LICENSE">LICENSE</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Hosted with GitHub Pages.</p>
+  </footer>
+</body>
+</html>

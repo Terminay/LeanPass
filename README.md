@@ -1,4 +1,4 @@
-![banner](https://jumpshare.com/share/0ylvm3Y132hOJtBJmuZQ)
+![banner](banner.png)
 <!-- this banner was made by https://leviarista.github.io/github-profile-header-generator/, kindly do check it out -->
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)

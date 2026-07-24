@@ -5,3 +5,4 @@ tests/
 PROMPT.md
 dist/
 leanpass/__pycache__
+.pytest_cache/

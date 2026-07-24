@@ -1,8 +1,6 @@
-.kombai/
 __pycache__/
 .venv/
-tests/
-PROMPT.md
 dist/
 leanpass/__pycache__
 .pytest_cache/
+leanpass.egg-info/

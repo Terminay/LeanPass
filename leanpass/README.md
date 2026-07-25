@@ -45,6 +45,8 @@ Available components:
 - `nn.Linear(in_features, out_features)` creates a linear layer with weights and bias.
 - `nn.MLP(layer_sizes)` creates a multilayer perceptron with ReLU activations between layers.
 - `nn.mse_loss(predictions, targets)` computes mean squared error.
+- `nn.cross_entropy_loss(predictions, targets)` computes categorical cross-entropy for multi-class targets.
+- `nn.binary_cross_entropy_loss(predictions, targets)` computes binary cross-entropy for binary classification.
 
 ### Optimizers
 

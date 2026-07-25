@@ -41,3 +41,27 @@ def test_mlp_training_step():
 
     assert all(param.grad is not None for param in model.parameters())
     assert any(np.any(param.data != 0) for param in model.parameters())
+
+
+def test_cross_entropy_loss_backward():
+    logits = Tensor([[1.0, 2.0, 3.0]], requires_grad=True)
+    target = Tensor([[0.0, 0.0, 1.0]], requires_grad=False)
+
+    loss = nn.cross_entropy_loss(logits, target)
+    loss.backward()
+
+    assert loss.data.shape == ()
+    assert logits.grad.shape == logits.data.shape
+    assert np.all(logits.grad != 0)
+
+
+def test_binary_cross_entropy_loss_backward():
+    logits = Tensor([0.2, -1.0], requires_grad=True)
+    target = Tensor([1.0, 0.0], requires_grad=False)
+
+    loss = nn.binary_cross_entropy_loss(logits, target)
+    loss.backward()
+
+    assert loss.data.shape == ()
+    assert logits.grad.shape == logits.data.shape
+    assert np.all(logits.grad != 0)

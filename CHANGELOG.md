@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on keep-a-changelog.org and uses semantic versioning.
 
+## [0.1.2] - 2026-07-25
+
+### Added
+- `cross_entropy_loss` for categorical classification training
+- `binary_cross_entropy_loss` for binary label training
+
+### Changed
+- Updated package version to `0.1.2`
+
 ## [0.1.1] - 2026-07-25
 
 ### Added

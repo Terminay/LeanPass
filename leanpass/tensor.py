@@ -200,27 +200,41 @@ class Tensor:
         out._backward = _backward
         return out
 
-    def sum(self):
-        out = Tensor(self.data.sum(), requires_grad=self.requires_grad, name="sum")
+    def sum(self, axis=None, keepdims=False):
+        out_data = self.data.sum(axis=axis, keepdims=keepdims)
+        out = Tensor(out_data, requires_grad=self.requires_grad, name="sum")
         out._prev = {self}
         out._op = "sum"
+        out._meta = {"axis": axis, "keepdims": keepdims, "shape": self.data.shape}
 
         def _backward():
             if self.requires_grad:
-                self.grad += np.ones_like(self.data) * out.grad
+                grad = out.grad
+                if axis is not None:
+                    grad = np.expand_dims(grad, axis=axis) if not keepdims else grad
+                    self.grad += np.broadcast_to(grad, self.data.shape)
+                else:
+                    self.grad += np.ones_like(self.data) * out.grad
 
         out._backward = _backward
         return out
 
-    def mean(self):
-        out = Tensor(self.data.mean(), requires_grad=self.requires_grad, name="mean")
+    def mean(self, axis=None, keepdims=False):
+        out_data = self.data.mean(axis=axis, keepdims=keepdims)
+        out = Tensor(out_data, requires_grad=self.requires_grad, name="mean")
         out._prev = {self}
         out._op = "mean"
+        out._meta = {"axis": axis, "keepdims": keepdims, "shape": self.data.shape}
 
         def _backward():
             if self.requires_grad:
-                scale = 1.0 / self.data.size
-                self.grad += np.ones_like(self.data) * out.grad * scale
+                grad = out.grad
+                divisor = self.data.size if axis is None else np.prod([self.data.shape[i] for i in axis]) if isinstance(axis, tuple) else self.data.shape[axis]
+                if axis is not None:
+                    grad = np.expand_dims(grad, axis=axis) if not keepdims else grad
+                    self.grad += np.broadcast_to(grad * (1.0 / divisor), self.data.shape)
+                else:
+                    self.grad += np.ones_like(self.data) * out.grad * (1.0 / divisor)
 
         out._backward = _backward
         return out

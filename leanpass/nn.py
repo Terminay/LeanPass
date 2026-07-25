@@ -70,3 +70,23 @@ class MLP(Module):
 def mse_loss(prediction: Tensor, target: Tensor) -> Tensor:
     """Mean squared error loss used for regression training."""
     return ((prediction - target) ** 2).mean()
+
+
+def cross_entropy_loss(prediction: Tensor, target: Tensor, axis: int = -1) -> Tensor:
+    """Categorical cross-entropy loss for one-hot target distributions.
+
+    The function expects raw prediction logits and a target tensor with the same
+    shape as the prediction, where each row is either a one-hot label vector or
+    a target probability distribution.
+    """
+    probs = prediction.softmax(axis=axis)
+    return -(target * probs.log()).sum(axis=axis).mean()
+
+
+def binary_cross_entropy_loss(prediction: Tensor, target: Tensor) -> Tensor:
+    """Binary cross-entropy loss for binary labels.
+
+    The function accepts logits and applies a sigmoid before computing the loss.
+    """
+    probs = prediction.sigmoid()
+    return -(target * probs.log() + (1 - target) * (1 - probs).log()).mean()

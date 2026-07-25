@@ -53,6 +53,7 @@ python demo.py
 - tests/ — regression and gradient-check tests
 - demo.py — a small end-to-end example
 - pyproject.toml — package metadata and build configuration
+- CHANGELOG.md — release history and notable changes
 
 ## Development
 

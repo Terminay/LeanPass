@@ -65,3 +65,35 @@ def test_binary_cross_entropy_loss_backward():
     assert loss.data.shape == ()
     assert logits.grad.shape == logits.data.shape
     assert np.all(logits.grad != 0)
+
+
+def test_tensor_tanh_backward():
+    x = Tensor([0.5, -0.5], requires_grad=True)
+    y = x.tanh().sum()
+    y.backward()
+
+    assert y.data.shape == ()
+    assert x.grad.shape == x.data.shape
+    assert np.all(np.isfinite(x.grad))
+    assert np.all(x.grad != 0)
+
+
+def test_tensor_leaky_relu_backward():
+    x = Tensor([-1.0, 2.0], requires_grad=True)
+    y = x.leaky_relu(negative_slope=0.05).sum()
+    y.backward()
+
+    assert y.data.shape == ()
+    assert x.grad.shape == x.data.shape
+    assert np.allclose(x.grad, [0.05, 1.0])
+
+
+def test_tensor_gelu_backward():
+    x = Tensor([0.1, -0.1], requires_grad=True)
+    y = x.gelu().sum()
+    y.backward()
+
+    assert y.data.shape == ()
+    assert x.grad.shape == x.data.shape
+    assert np.all(np.isfinite(x.grad))
+    assert np.all(x.grad != 0)

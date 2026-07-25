@@ -28,6 +28,9 @@ Supported operations:
 - `Tensor.mean()`
 - `Tensor.relu()`
 - `Tensor.sigmoid()`
+- `Tensor.tanh()`
+- `Tensor.leaky_relu()`
+- `Tensor.gelu()`
 - `Tensor.softmax()`
 - `Tensor.backward()`
 

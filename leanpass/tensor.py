@@ -200,6 +200,44 @@ class Tensor:
         out._backward = _backward
         return out
 
+    def tanh(self):
+        out_data = np.tanh(self.data)
+        out = self._create_child(out_data, "tanh", {self})
+
+        def _backward():
+            if self.requires_grad:
+                grad_input = out.grad * (1 - out.data ** 2)
+                self.grad += _sum_to_shape(grad_input, self.data.shape)
+
+        out._backward = _backward
+        return out
+
+    def leaky_relu(self, negative_slope=0.01):
+        out_data = np.where(self.data >= 0, self.data, self.data * negative_slope)
+        out = self._create_child(out_data, "leaky_relu", {self}, meta={"negative_slope": negative_slope})
+
+        def _backward():
+            if self.requires_grad:
+                grad_input = np.where(self.data >= 0, out.grad, out.grad * negative_slope)
+                self.grad += _sum_to_shape(grad_input, self.data.shape)
+
+        out._backward = _backward
+        return out
+
+    def gelu(self):
+        out_data = 0.5 * self.data * (1 + np.tanh(np.sqrt(2 / np.pi) * (self.data + 0.044715 * self.data ** 3)))
+        out = self._create_child(out_data, "gelu", {self})
+
+        def _backward():
+            if self.requires_grad:
+                tanh_arg = np.sqrt(2 / np.pi) * (self.data + 0.044715 * self.data ** 3)
+                tanh_val = np.tanh(tanh_arg)
+                grad_term = 0.5 * (1 + tanh_val) + (0.5 * self.data * (1 - tanh_val ** 2) * np.sqrt(2 / np.pi) * (1 + 3 * 0.044715 * self.data ** 2))
+                self.grad += _sum_to_shape(out.grad * grad_term, self.data.shape)
+
+        out._backward = _backward
+        return out
+
     def sum(self, axis=None, keepdims=False):
         out_data = self.data.sum(axis=axis, keepdims=keepdims)
         out = Tensor(out_data, requires_grad=self.requires_grad, name="sum")

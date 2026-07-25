@@ -19,7 +19,7 @@ LeanPass is a lightweight, transparent NumPy-based autodiff library for small ne
 
 - Tensor objects with reverse-mode autodiff
 - Core arithmetic and matrix operations
-- Activation functions such as ReLU, sigmoid, and softmax
+- Activation functions such as ReLU, sigmoid, softmax, tanh, LeakyReLU, and GELU
 - Linear layers and multilayer perceptrons
 - Loss utilities: `mse_loss`, `cross_entropy_loss`, and `binary_cross_entropy_loss`
 - SGD and Adam optimizers

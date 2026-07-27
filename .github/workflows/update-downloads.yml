@@ -2,8 +2,8 @@ name: Update download badge
 
 on:
   schedule:
-    - cron: '0 6 * * *'
-  workflow_dispatch:        # allows manual trigger from the Actions tab
+    - cron: '0 6 * * *'   # daily at 06:00 UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -44,7 +44,7 @@ jobs:
 
           badge = {
               "schemaVersion": 1,
-              "label": "downloads (weekly, real)",
+              "label": "downloads",
               "message": str(real_downloads),
               "color": "blue",
           }

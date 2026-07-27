@@ -6,6 +6,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Tests](https://img.shields.io/badge/tests-pytest-yellow)
 ![Size](https://img.shields.io/badge/size-~118KB-lightgrey)
+![PyPI Downloads](https://img.shields.io/pypi/dm/leanpass)
 [![Stars](https://img.shields.io/github/stars/Terminay/LeanPass?style=social)](https://github.com/Terminay/LeanPass/stargazers)
 
 LeanPass is a lightweight, transparent NumPy-based autodiff library for small neural network experiments. It is designed to be easy to read, simple to inspect, and practical for learning how automatic differentiation works under the hood.

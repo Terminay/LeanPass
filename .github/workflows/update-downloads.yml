@@ -1,8 +1,11 @@
 name: Update download badge
 on:
   schedule:
-    - cron: '0 6 * * *'  # daily
+    - cron: '0 6 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:

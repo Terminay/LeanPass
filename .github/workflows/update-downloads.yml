@@ -1,0 +1,29 @@
+name: Update download badge
+on:
+  schedule:
+    - cron: '0 6 * * *'  # daily
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute real downloads
+        run: |
+          pip install pypistats
+          pypistats python_minor leanpass --format json > raw.json
+          python3 - <<'EOF'
+          import json
+          data = json.load(open("raw.json"))["data"]
+          total = sum(d["downloads"] for d in data if d["category"] != "null")
+          badge = {"schemaVersion": 1, "label": "downloads (real)", "message": str(total), "color": "blue"}
+          json.dump(badge, open("badge.json", "w"))
+          EOF
+      - name: Commit badge.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add badge.json
+          git commit -m "Update download badge" || echo "no changes"
+          git push

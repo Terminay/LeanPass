@@ -1,0 +1,218 @@
+/* LeanPass Docs */
+
+/* ── Imports ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+/* ── Root variables ────────────────────────────────────── */
+:root {
+  /* Accent*/
+  --ifm-color-primary: #c97b3e;
+  --ifm-color-primary-dark: #b56e38;
+  --ifm-color-primary-darker: #a16232;
+  --ifm-color-primary-darkest: #8d562c;
+  --ifm-color-primary-light: #d48a4f;
+  --ifm-color-primary-lighter: #d99960;
+  --ifm-color-primary-lightest: #e0a871;
+
+  /* Typography */
+  --ifm-font-family-base: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'IBM Plex Mono', 'Fira Code', monospace;
+
+  /* Code blocks */
+  --ifm-code-font-size: 0.875rem;
+  --docusaurus-highlighted-code-line-bg: rgba(201, 123, 62, 0.08);
+
+  /* Spacing */
+  --ifm-leading: 1.75;
+  --ifm-paragraph-margin-bottom: 1.25rem;
+}
+
+/* ── Dark mode overrides ───────────────────────────────── */
+[data-theme='dark'] {
+  --ifm-color-primary: #e0a871;
+  --ifm-color-primary-dark: #d99960;
+  --ifm-color-primary-darker: #d48a4f;
+  --ifm-color-primary-darkest: #c97b3e;
+  --ifm-color-primary-light: #e5b582;
+  --ifm-color-primary-lighter: #eac293;
+  --ifm-color-primary-lightest: #efcfa4;
+  --docusaurus-highlighted-code-line-bg: rgba(224, 168, 113, 0.1);
+}
+
+/* ── Hero overrides for landing page ───────────────────── */
+.hero--leanpass {
+  background: transparent;
+  padding: 6rem 0 3rem;
+  text-align: center;
+}
+
+.hero--leanpass .container {
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero--leanpass h1 {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.hero--leanpass .hero__subtitle {
+  font-size: 1.125rem;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.75;
+}
+
+/* ── Main content area padding ─────────────────────────── */
+main {
+  padding-bottom: 3rem;
+}
+
+.markdown {
+  --ifm-leading: 1.75;
+}
+
+.markdown > p {
+  margin-bottom: 1.25rem;
+}
+
+/* ── Code block in hero ────────────────────────────────── */
+.hero--leanpass .theme-code-block {
+  margin: 0 auto;
+  max-width: 320px;
+  text-align: left;
+}
+
+/* ── Docs page padding ─────────────────────────────────── */
+.container.padding-top--md {
+  padding-top: 2.5rem !important;
+}
+
+.doc-demo-wrapper {
+  margin: 2rem 0;
+}
+
+.doc-demo-wrapper .theme-code-block {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Code block refinements ────────────────────────────── */
+pre code {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', 'Fira Code', monospace !important;
+  font-feature-settings: 'liga' 0;
+}
+
+.theme-code-block {
+  box-shadow: none;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+}
+
+/* ── Prose refinements ─────────────────────────────────── */
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.markdown h1 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+.markdown h3 {
+  font-size: 1.25rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown p {
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.markdown a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Increase spacing around doc content ───────────────── */
+.docMainContainer > .container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.col.docItemCol {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* ── List spacing ──────────────────────────────────────── */
+.markdown ul,
+.markdown ol {
+  margin-bottom: 1.25rem;
+}
+
+.markdown li {
+  line-height: 1.7;
+  margin-bottom: 0.25rem;
+}
+
+/* ── Sidebar ───────────────────────────────────────────── */
+.theme-doc-sidebar-menu {
+  font-size: 0.9rem;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+.footer--dark {
+  --ifm-footer-background-color: #1a1a1a;
+}
+
+.footer__links {
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ── API reference ──────────── */
+.api-reference .markdown h2 {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+.api-reference table {
+  font-size: 0.85rem;
+}
+
+.api-reference pre {
+  margin: 0.5rem 0;
+}
+
+/* ── Table styling ─────────────────────────────────────── */
+.markdown table {
+  display: table;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.markdown th,
+.markdown td {
+  padding: 0.5rem 0.75rem;
+}
+
+.markdown th {
+  font-weight: 600;
+}

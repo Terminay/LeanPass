@@ -23,7 +23,7 @@ export default function Home() {
 
             <div style={{ marginTop: '3rem', textAlign: 'center' }}>
               <img
-                src="/LeanPass/img/computation_graph.png"
+                src="/img/computation_graph.png"
                 alt="Computation graph showing forward and backward pass"
                 style={{
                   maxWidth: '100%',

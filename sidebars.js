@@ -47,6 +47,7 @@ const sidebars = {
         slug: '/category/guides',
       },
       items: [
+        'guides/xor-classification',
         'guides/binary-classification',
         'guides/multi-class-classification',
         'guides/regression',

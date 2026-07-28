@@ -1,0 +1,10 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Solid diamond: the "forward pass" -->
+  <rect x="14" y="14" width="26" height="26" rx="4"
+        transform="rotate(45 27 27)"
+        fill="#D97706"/>
+  <!-- Outline diamond: the "backward pass" -->
+  <rect x="24" y="24" width="26" height="26" rx="4"
+        transform="rotate(45 37 37)"
+        fill="none" stroke="#D97706" stroke-width="3.5"/>
+</svg>

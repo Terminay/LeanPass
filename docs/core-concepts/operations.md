@@ -67,7 +67,7 @@ These reduce an entire tensor to a scalar — useful for computing loss values.
 
 ## Non-linear Operations
 
-These are covered in detail in [Activations](/LeanPass/docs/core-concepts/activations), but for reference:
+These are covered in detail in [Activations](/docs/core-concepts/activations), but for reference:
 
 ```python
 x = Tensor([-2.0, -1.0, 0.0, 1.0, 2.0], requires_grad=True)

@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [keep-a-changelog.org](https://keepachangelog.org/) and uses semantic versioning.
 
+## [0.1.4] - 2026-07-28
+
+### Added
+
+- Complete documentation site with Docusaurus
+- XOR classification guide
+- Computation graph visualization assets
+
+### Changed
+
+- Updated package version to `0.1.4`
+- Fixed documentation image paths for production
+- Completed all documentation placeholders
+
 ## [0.1.3] - 2026-07-25
 
 ### Added

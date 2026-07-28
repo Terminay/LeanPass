@@ -8,7 +8,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://Terminay.github.io',
-  baseUrl: '/LeanPass/',
+  baseUrl: '/',
 
   organizationName: 'Terminay',
   projectName: 'LeanPass',
@@ -49,7 +49,7 @@ const config = {
         title: 'LeanPass',
         logo: {
           alt: 'LeanPass Logo',
-          src: 'img/logo.png',
+          src: 'img/leanpass-logo.svg',
         },
         items: [
           {

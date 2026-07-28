@@ -1,4 +1,4 @@
-![banner](banner.png)
+![banner](img/banner.png)
 <!-- this banner was made by https://leviarista.github.io/github-profile-header-generator/, kindly do check it out -->
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
@@ -139,7 +139,7 @@ dot -Tpng graph.dot -o graph.png
 
 The resulting graph shows the full computation chain from inputs through matrix multiplications, activations, and loss computation:
 
-![Computation graph](computation_graph.png)
+![Computation graph](img/computation_graph.png)
 
 ## Lightweight metrics
 

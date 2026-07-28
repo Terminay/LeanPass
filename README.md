@@ -139,7 +139,7 @@ dot -Tpng graph.dot -o graph.png
 
 The resulting graph shows the full computation chain from inputs through matrix multiplications, activations, and loss computation:
 
-![Computation graph](/img/computation_graph.png)
+![Computation graph](static/img/computation_graph.png)
 
 ## Lightweight metrics
 

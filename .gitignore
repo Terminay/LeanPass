@@ -3,9 +3,9 @@ __pycache__/
 dist/
 leanpass/__pycache__
 .pytest_cache/
-leanpass.egg-info/
 node_modules/
 build/
 .github/
 .kombai/
 .docusaurus/
+*.egg-info/

@@ -4,7 +4,9 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![PyPI](https://img.shields.io/pypi/v/leanpass.svg)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Tests](https://img.shields.io/badge/tests-pytest-yellow)
+![Tests](https://img.shields.io/github/actions/workflow/status/Terminay/LeanPass/summary.yml?label=tests)
+![CodeQL](https://img.shields.io/github/actions/workflow/status/Terminay/LeanPass/codeql.yml?label=CodeQL)
+![PyPI Publish](https://img.shields.io/github/actions/workflow/status/Terminay/LeanPass/publish-pypi.yml?label=PyPI%20publish)
 ![Size](https://img.shields.io/badge/size-~118KB-lightgrey)
 ![Real Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Terminay/LeanPass/main/badge.json)
 [![Stars](https://img.shields.io/github/stars/Terminay/LeanPass?style=social)](https://github.com/Terminay/LeanPass/stargazers)
@@ -33,6 +35,10 @@ LeanPass is a lightweight, transparent NumPy-based autodiff library for small ne
 ```bash
 pip install leanpass
 ```
+
+## Documentation
+
+Full documentation is available at [**leanpass.kilobyte136.workers.dev**](https://leanpass.kilobyte136.workers.dev/) and includes API reference, core concept explanations, and hands-on guides covering regression, classification, MNIST, gradient checking, and custom layers.
 
 ## Quick start
 
@@ -177,10 +183,17 @@ python -m examples.demo_regression
 
 ## Repository layout
 
-- `leanpass/` — the package source code
+- `leanpass/` — the package source code (tensor, nn, optim)
 - `examples/` — example scripts (classification, XOR, MNIST-lite, regression)
 - `tests/` — regression and gradient-check tests
+- `docs/` — Docusaurus documentation source files
+- `src/` — Docusaurus theme and page configuration
+- `static/` — images, icons, and other static assets
+- `.github/` — CI/CD workflows, issue templates, PR templates
 - `pyproject.toml` — package metadata and build configuration
+- `CHANGELOG.md` — release history
+- `CONTRIBUTING.md` — contribution guidelines
+- `SECURITY.md` — vulnerability disclosure process
 
 ## Development
 
@@ -189,6 +202,10 @@ To run the test suite:
 ```bash
 pytest
 ```
+
+## Project status
+
+LeanPass is actively maintained and used for educational purposes. The core API is stable, and new features are added primarily for learning and teaching value. Bug fixes and documentation improvements are welcome.
 
 ## Community and contribution
 

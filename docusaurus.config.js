@@ -7,7 +7,7 @@ const config = {
   tagline: 'A lightweight, NumPy-only reverse-mode autodiff library for educational use.',
   favicon: 'img/favicon.ico',
 
-  url: 'https://Terminay.github.io',
+  url: 'https://leanpass.kilobyte136.workers.dev',
   baseUrl: '/',
 
   organizationName: 'Terminay',

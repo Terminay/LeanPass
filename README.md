@@ -217,3 +217,5 @@ LeanPass is actively maintained and used for educational purposes. The core API 
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+![RepoVibes](https://repovibes-bvtf9rccp-byte-nes-projects.vercel.app/api/hexagon/Terminay/leanpass.svg)

@@ -220,4 +220,12 @@ LeanPass is actively maintained and used for educational purposes. The core API 
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-![RepoVibes](https://repovibes.vercel.app/api/hexagon/Terminay/leanpass.svg)
+## Star History
+
+<a href="https://www.star-history.com/?repos=Terminay%2Fleanpass&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Terminay/leanpass&type=date&theme=dark&legend=top-left&sealed_token=fJJr1fCgBwIlSkOw9Bp_9bc9MkssvAAEXVRl4UOSqEW5yT80eFu6udpyDwky0B7yFSTDkhePBqlxOWrvImDSxj6GfEa1klFvjAIRvXc9KM3SGBoVv__Sbw" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Terminay/leanpass&type=date&legend=top-left&sealed_token=fJJr1fCgBwIlSkOw9Bp_9bc9MkssvAAEXVRl4UOSqEW5yT80eFu6udpyDwky0B7yFSTDkhePBqlxOWrvImDSxj6GfEa1klFvjAIRvXc9KM3SGBoVv__Sbw" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Terminay/leanpass&type=date&legend=top-left&sealed_token=fJJr1fCgBwIlSkOw9Bp_9bc9MkssvAAEXVRl4UOSqEW5yT80eFu6udpyDwky0B7yFSTDkhePBqlxOWrvImDSxj6GfEa1klFvjAIRvXc9KM3SGBoVv__Sbw" />
+ </picture>
+</a>

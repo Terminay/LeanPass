@@ -79,3 +79,15 @@ def test_visualize_dot():
     assert dot.startswith("digraph")
     assert "->" in dot
     assert "input" in dot
+
+
+def test_eval_forward_handles_reductions():
+    # sum() and mean() stored their _prev as a set instead of a tuple, so
+    # _eval_forward's `node._prev[0]` indexing raised
+    # "TypeError: 'set' object is not subscriptable" for any graph that reduces
+    # with sum or mean, which is almost every loss.
+    x = Tensor([[1.0, 2.0], [3.0, 4.0]], requires_grad=True)
+    assert np.isclose((x * x).sum()._eval_forward(), 30.0)
+
+    y = Tensor([1.0, 2.0, 3.0], requires_grad=True)
+    assert np.isclose((y * y).mean()._eval_forward(), 14.0 / 3.0)

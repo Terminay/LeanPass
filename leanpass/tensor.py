@@ -241,7 +241,7 @@ class Tensor:
     def sum(self, axis=None, keepdims=False):
         out_data = self.data.sum(axis=axis, keepdims=keepdims)
         out = Tensor(out_data, requires_grad=self.requires_grad, name="sum")
-        out._prev = {self}
+        out._prev = (self,)
         out._op = "sum"
         out._meta = {"axis": axis, "keepdims": keepdims, "shape": self.data.shape}
 
@@ -260,7 +260,7 @@ class Tensor:
     def mean(self, axis=None, keepdims=False):
         out_data = self.data.mean(axis=axis, keepdims=keepdims)
         out = Tensor(out_data, requires_grad=self.requires_grad, name="mean")
-        out._prev = {self}
+        out._prev = (self,)
         out._op = "mean"
         out._meta = {"axis": axis, "keepdims": keepdims, "shape": self.data.shape}
 
